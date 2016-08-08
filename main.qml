@@ -76,42 +76,42 @@ ApplicationWindow {
     ListElement{icon:"q3.png"}
     ListElement{icon:"q4.png"}
     }
-//    Component{ //代理
-//    id:delegate
-//    Item{ id:wrapper; width:50; height:50
-//    Column{
-//    Image {source:icon;width:50;height:50}
-//    }
-//    }
-//    }
-//    PathView{ //路径视图
-//    anchors.fill:parent; model:listModel; delegate:delegate
-//    path:Path{startX:120;startY:200
-//    PathQuad{x:120;y:25;controlX:260;controlY:125}
-//    PathQuad{x:120;y:200;controlX:-20;controlY:125}
-//    }
-//    }
-
     Component{ //代理
     id:delegate
     Item{ id:wrapper; width:50; height:50
-    scale:PathView.scale; opacity:PathView.opacity
     Column{
     Image {source:icon;width:50;height:50}
     }
     }
     }
-    PathView{
+    PathView{ //路径视图
     anchors.fill:parent; model:listModel; delegate:delegate
     path:Path{startX:120;startY:200
-    PathAttribute{name:"scale";value:1.0}
-    PathAttribute{name:"opacity";value:1.0}
     PathQuad{x:120;y:25;controlX:260;controlY:125}
-    PathAttribute{name:"scale";value:0.5}
-    PathAttribute{name:"opacity";value:0.5}
     PathQuad{x:120;y:200;controlX:-20;controlY:125}
     }
     }
+
+//    Component{ //代理
+//    id:delegate
+//    Item{ id:wrapper; width:50; height:50
+//    scale:PathView.scale; opacity:PathView.opacity
+//    Column{
+//    Image {source:icon;width:50;height:50}
+//    }
+//    }
+//    }
+//    PathView{
+//    anchors.fill:parent; model:listModel; delegate:delegate
+//    path:Path{startX:120;startY:200
+//    PathAttribute{name:"scale";value:1.0}
+//    PathAttribute{name:"opacity";value:1.0}
+//    PathQuad{x:120;y:25;controlX:260;controlY:125}
+//    PathAttribute{name:"scale";value:0.5}
+//    PathAttribute{name:"opacity";value:0.5}
+//    PathQuad{x:120;y:200;controlX:-20;controlY:125}
+//    }
+//    }
     }
 
 
